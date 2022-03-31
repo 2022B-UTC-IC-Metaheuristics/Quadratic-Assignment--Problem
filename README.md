@@ -34,6 +34,12 @@ Suponemos que existen _n_ sitios disponibles y _n_ instalaciones por edificar. S
 ![representación](https://user-images.githubusercontent.com/25113662/160997841-78cd06e4-3dcc-4761-ab51-d8399ceaf7ad.PNG)
 
 ## Generación de una solución vecina
+Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
+* Para la primera celda de una matriz se genera un número aleatorio.
+* A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
+* Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda n-1.
+* La última celda lleva el número que falle en el arreglo.
+
 ## Función de costo
 ## Función objetivo
 ![funcionObjetivo](https://user-images.githubusercontent.com/25113662/160996333-e245e1e6-19fb-4702-abe4-eb5719f9c414.PNG)
