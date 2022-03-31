@@ -10,12 +10,7 @@ El problema de asignación cuadrática (QAP) es un problema clásico de optimiza
 * Matriz de flujos: F={fkl}, fkl representa el flujo entre la actividad k y la actividad l.
 
 Ambas matrices de tamaño nxn.
-Teniendo en cuenta las matrices F y D, el QAP consiste en la búsqueda de una permutación p∈Π de n elementos que minimice la función objetivo:
-
-
-
-
---
+Teniendo en cuenta las matrices F y D, el QAP consiste en la búsqueda de una permutación p∈Π de n elementos que minimice la función objetivo.
 
 ## Aplicaciones
 El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin embargo, sus aplicaciones han empezado a ser cubrir  otros campos muy variados. Algunas aplicaciones son:
