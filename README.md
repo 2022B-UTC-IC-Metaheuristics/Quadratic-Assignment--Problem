@@ -1,7 +1,7 @@
 # Quadratic-Assignment--Problem
 
 ## Definición del problema
-El problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-completos. El objetivo es encontrar la asignación de actividades a localidades que minimice la suma de los productos entre flujos y distancias.
+El problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-hard. El objetivo es encontrar la asignación de actividades a localidades que minimice la suma de los productos entre flujos y distancias.
 
 ![img1](https://user-images.githubusercontent.com/25113662/160808642-f8d2d374-34d4-441b-b693-f810e3bc68f0.PNG)
 
