@@ -27,7 +27,7 @@ El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin
   * Hospitales
 * Problemas de flujo en línea generalizado
 ## Ejemplo
-En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal.
+Suponemos que existen _n_ sitios disponibles y _n_ instalaciones por edificar. Sea _dkl_ la distancia entre dos sitios _k_ y _l_ donde se cosntruirán las nuevas intalaciones. Además, _fij_ es el flujo semanal de personas que se transladarpian entre las construcciones _i_ y _j_. Cada asignación puede ser escrita como una permutación _p_ del conjunto _N={1,2,...,n}_, tal que _p(i)=k_ significa que la instalación _i_ es asignada al sitio _k_. El producto
 ## Modelo
 ## Especificación
 ## Representación de la solución
