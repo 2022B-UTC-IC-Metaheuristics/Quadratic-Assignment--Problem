@@ -12,7 +12,7 @@ El problema de asignación cuadrática (QAP) es un problema clásico de optimiza
 Ambas matrices de tamaño nxn.
 Teniendo en cuenta las matrices F y D, el QAP consiste en la búsqueda de una permutación p∈Π de n elementos que minimice la función objetivo:
 
-![img2](https://user-images.githubusercontent.com/25113662/160813146-a14dfbc5-9ada-46cb-85dd-1e11032fc162.PNG)
+
 
 
 --
@@ -27,10 +27,14 @@ El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin
   * Hospitales
 * Problemas de flujo en línea generalizado
 ## Ejemplo
-Suponemos que existen _n_ sitios disponibles y _n_ instalaciones por edificar. Sea _dkl_ la distancia entre dos sitios _k_ y _l_ donde se cosntruirán las nuevas intalaciones. Además, _fij_ es el flujo semanal de personas que se transladarpian entre las construcciones _i_ y _j_. Cada asignación puede ser escrita como una permutación _p_ del conjunto _N={1,2,...,n}_, tal que _p(i)=k_ significa que la instalación _i_ es asignada al sitio _k_. El producto
+Suponemos que existen _n_ sitios disponibles y _n_ instalaciones por edificar. Sea _dkl_ la distancia entre dos sitios _k_ y _l_ donde se cosntruirán las nuevas intalaciones. Además, _fij_ es el flujo semanal de personas que se transladarpian entre las construcciones _i_ y _j_. Cada asignación puede ser escrita como una permutación _p_ del conjunto _N={1,2,...,n}_, tal que _p(i)=k_ significa que la instalación _i_ es asignada al sitio _k_. El producto _fij * d p(i) p(j)_ describe la distancia caminada semnalmente entre las instalaciones _i_ y _j_. Por lo tanto, el problema será minimizar la distancia total recorrida semanlmente y se reduce a encontrar una _p_ que minimice la función _z_.
 ## Modelo
-## Especificación
+
 ## Representación de la solución
+![representación](https://user-images.githubusercontent.com/25113662/160997841-78cd06e4-3dcc-4761-ab51-d8399ceaf7ad.PNG)
+
 ## Generación de una solución vecina
 ## Función de costo
+## Función objetivo
+![funcionObjetivo](https://user-images.githubusercontent.com/25113662/160996333-e245e1e6-19fb-4702-abe4-eb5719f9c414.PNG)
 ## Instancias a ejecutar
