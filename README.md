@@ -27,7 +27,7 @@ El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin
   * Hospitales
 * Problemas de flujo en línea generalizado
 ## Ejemplo
-En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. Matemáticamente se formula de la siguiente manera:
+En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal.
 ## Modelo
 ## Especificación
 ## Representación de la solución
