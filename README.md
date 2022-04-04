@@ -1,19 +1,16 @@
 # Quadratic-Assignment--Problem
 
+
 ## Definición del problema
 El problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-hard. El objetivo es encontrar la asignación de actividades a localidades que minimice la suma de los productos entre flujos y distancias.
 
-![img1](https://user-images.githubusercontent.com/25113662/160808642-f8d2d374-34d4-441b-b693-f810e3bc68f0.PNG)
+Dados el conjunto IN = {1, 2, ..., n} y las matrices A=(aij) y B=(bij)∈ IRnxn, el problema se pkantea de la forma:
+![descripccion](https://user-images.githubusercontent.com/25113662/161483775-a455ae2a-e130-4c2e-889f-91af1c6ae1d2.PNG)
 
-* Matriz de distancias: D={dij}, dij representa la distancia entre la localidad i y la localidad j.
+donde Sn es el conjunto de permutaciones de {1, 2, ..., n}, se debe encontrar una permutación π∈Sn de tal manera que minimice la doble sumatoria. Normalmente se habla de minimización y no de maximización ya que, maximizar _f_ puede obtenerse de minimizar -_f_.
 
-* Matriz de flujos: F={fkl}, fkl representa el flujo entre la actividad k y la actividad l.
-
-Ambas matrices de tamaño nxn.
-Teniendo en cuenta las matrices F y D, el QAP consiste en la búsqueda de una permutación p∈Π de n elementos que minimice la función objetivo.
-
-## Aplicaciones
-El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin embargo, sus aplicaciones han empezado a ser cubrir  otros campos muy variados. Algunas aplicaciones son:
+### Aplicaciones
+El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin embargo, sus aplicaciones han empezado a cubrir  otros campos muy variados. Algunas aplicaciones son:
 * Logística e infraestructuras aeroportuarias
 * Diseño de componentes electrónicos
 * Planificación y diseño de:
@@ -22,20 +19,27 @@ El QAP inicialmente fue planteada como una técnica enfocada a la econimía, sin
   * Hospitales
 * Problemas de flujo en línea generalizado
 ## Ejemplo
-Suponemos que existen _n_ sitios disponibles y _n_ instalaciones por edificar. Sea _dkl_ la distancia entre dos sitios _k_ y _l_ donde se cosntruirán las nuevas intalaciones. Además, _fij_ es el flujo semanal de personas que se transladarpian entre las construcciones _i_ y _j_. Cada asignación puede ser escrita como una permutación _p_ del conjunto _N={1,2,...,n}_, tal que _p(i)=k_ significa que la instalación _i_ es asignada al sitio _k_. El producto _fij * d p(i) p(j)_ describe la distancia caminada semnalmente entre las instalaciones _i_ y _j_. Por lo tanto, el problema será minimizar la distancia total recorrida semanlmente y se reduce a encontrar una _p_ que minimice la función _z_.
-## Modelo
+[Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
+### Especificación
+Matemáticamente se formula de la siguiente manera:
+Sean A = (aij ), B = (bkl) ∈ IRn×n , donde 
+* _n_ indica el número de viviendas que deben construirse. 
+* _a_ij_ la distancia entre el sitio i y el sitio j sobre el campus donde deben construirse las viviendas. 
+* _(b_kl)_ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas _k_ y _l_. 
+El producto _a_ik b_π(i)π(k)_ describe la distancia que se debe caminar entre las viviendas _j = π(i)_ y _l = π(k)_, si la vivienda _j_ está construida sobre el sitio _i_ y la vivienda _l_ sobre el sitio _k_.
+### Modelo
+![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
 
-## Representación de la solución
-![representación](https://user-images.githubusercontent.com/25113662/160997841-78cd06e4-3dcc-4761-ab51-d8399ceaf7ad.PNG)
+### Representación de la solución
+![representación](https://user-images.githubusercontent.com/25113662/161484529-293f9768-e1c7-4d78-9dad-f86cab6e1244.PNG)
 
-## Generación de una solución vecina
+### Generación de una solución vecina
 Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
 * Para la primera celda de una matriz se genera un número aleatorio.
 * A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
 * Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda n-1.
 * La última celda lleva el número que falle en el arreglo.
 
-## Función de costo
-## Función objetivo
-![funcionObjetivo](https://user-images.githubusercontent.com/25113662/160996333-e245e1e6-19fb-4702-abe4-eb5719f9c414.PNG)
-## Instancias a ejecutar
+### Función de costo
+### Función objetivo
+### Instancias a ejecutar
