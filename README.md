@@ -4,7 +4,7 @@
 ## Definición del problema
 El problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-hard. El objetivo es encontrar la asignación de actividades a localidades que minimice la suma de los productos entre flujos y distancias.
 
-Dados el conjunto IN = {1, 2, ..., n} y las matrices A=(aij) y B=(bij)∈ IRnxn, el problema se pkantea de la forma:
+Dados el conjunto IN = {1, 2, ..., n} y las matrices A=(aij) y B=(bij)∈ IRnxn, el problema se plantea de la forma:
 ![descripccion](https://user-images.githubusercontent.com/25113662/161483775-a455ae2a-e130-4c2e-889f-91af1c6ae1d2.PNG)
 
 donde Sn es el conjunto de permutaciones de {1, 2, ..., n}, se debe encontrar una permutación π∈Sn de tal manera que minimice la doble sumatoria. Normalmente se habla de minimización y no de maximización ya que, maximizar _f_ puede obtenerse de minimizar -_f_.
@@ -22,10 +22,10 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 [Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
 ### Especificación
 Matemáticamente se formula de la siguiente manera:
-Sean A = (aij ), B = (bkl) ∈ IRn×n , donde 
+Sean A = (a_ij ), B = (b_kl) ∈ IRn×n , donde 
 * _n_ indica el número de viviendas que deben construirse. 
 * _a_ij_ la distancia entre el sitio i y el sitio j sobre el campus donde deben construirse las viviendas. 
-* _(b_kl)_ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas _k_ y _l_. 
+* _b_kl_ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas _k_ y _l_. 
 El producto _a_ik b_π(i)π(k)_ describe la distancia que se debe caminar entre las viviendas _j = π(i)_ y _l = π(k)_, si la vivienda _j_ está construida sobre el sitio _i_ y la vivienda _l_ sobre el sitio _k_.
 ### Modelo
 ![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
