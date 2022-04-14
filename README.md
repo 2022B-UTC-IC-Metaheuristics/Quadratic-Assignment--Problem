@@ -7,7 +7,9 @@ El problema de asignación cuadrática (QAP) es un problema clásico de optimiza
 Dados el conjunto IN = {1, 2, ..., n} y las matrices A=(aij) y B=(bij)∈ IRnxn, el problema se plantea de la forma:
 ![descripccion](https://user-images.githubusercontent.com/25113662/161483775-a455ae2a-e130-4c2e-889f-91af1c6ae1d2.PNG)
 
-donde Sn es el conjunto de permutaciones de {1, 2, ..., n}, se debe encontrar una permutación π∈Sn de tal manera que minimice la doble sumatoria. Normalmente se habla de minimización y no de maximización ya que, maximizar _f_ puede obtenerse de minimizar -_f_.
+donde Sn es el conjunto de permutaciones de {1, 2, ..., n}, se debe encontrar una permutación π∈Sn de tal manera que minimice la doble sumatoria. Normalmente se habla de minimización y no de maximización ya que, maximizar _f_ puede obtenerse de minimizar -_f_. Dado que las matrices A y B son simétricas, computacionalmente se pueden representar en una sola matriz _C_ como se muestra a continuación:
+![repComp](https://user-images.githubusercontent.com/25113662/163293020-753b193f-0870-42de-87eb-154df1a56dd7.PNG)
+
 
 ### Aplicaciones
 El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin embargo, sus aplicaciones han empezado a cubrir  otros campos muy variados. Algunas aplicaciones son:
