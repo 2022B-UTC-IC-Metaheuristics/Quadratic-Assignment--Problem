@@ -35,7 +35,9 @@ El producto _a_ik b_π(i)π(k)_ describe la distancia que se debe caminar entre 
 ![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
 
 ### Representación de la solución
-![representación](https://user-images.githubusercontent.com/25113662/161484529-293f9768-e1c7-4d78-9dad-f86cab6e1244.PNG)
+La solución es la permutación _p_ en _S_n_ que permita la minimización de la doble sumatoria.
+![visualización](https://user-images.githubusercontent.com/25113662/163540014-8d057c0d-47d4-43ac-a31a-1eb74c355dd7.PNG)
+
 
 ### Generación de una solución vecina
 Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
