@@ -41,7 +41,23 @@ Parte de la eficacia del algoritmo de debe a que la solución inicial sea factib
 * A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
 * Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda n-1.
 * La última celda lleva el número que falle en el arreglo.
-
+```
+def GenerarVecino(p):
+    #Se reordena la permutación p aleatoriamente
+    l=random.shuffle(p)
+    return l
+```
 ### Función de costo
-### Función objetivo
+```
+def costo(A,B,p,n):
+    z=0
+    #doble sumatoria
+    for i in range(n):
+        for j in range(n):        
+            z += A[i][j]*B[p[i]][p[j]]
+    return z
+``` 
 ### Instancias a ejecutar
+1. -
+2. -
+3. -
