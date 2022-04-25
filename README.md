@@ -65,3 +65,6 @@ def costo(A,B,p,n):
 1. -
 2. -
 3. -
+
+### Leer CSV
+![ReadCSV](https://user-images.githubusercontent.com/25113662/165063962-5cf41743-cfdd-4d26-857c-9b246a229eca.PNG)
