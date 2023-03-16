@@ -1,4 +1,4 @@
-# Quadratic-Assignment--Problem
+# Quadratic-Assignment-Problem
 
 
 ## Definición del problema
