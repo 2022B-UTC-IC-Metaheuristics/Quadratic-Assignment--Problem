@@ -2,16 +2,12 @@
 
 
 ## Definición del problema
-El problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-hard. El objetivo es encontrar la asignación de actividades a localidades que minimice la suma de los productos entre flujos y distancias.
+Planteado por Koopmans y Beckmann en 1957, el problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-completos, el cual **trata de asignar _n_ instalaciones a una misma cantidad _n_ de localizaciones con un coste asociado a cada una de ellas. Este coste depende de las distancias y flujos entre las instalaciones**, además de que puede existir un coste adicional por instalar cierta facilidad en cierta localización específica. El objetivo es buscar aquella combinación que minimice el coste total.
 
-Dados el conjunto IN = {1, 2, ..., n} y las matrices A=(aij) y B=(bij)∈ IRnxn, el problema se plantea de la forma:
+![QAP_1](https://user-images.githubusercontent.com/25113662/226206123-901ea03f-bc6b-4e68-b4aa-81cfd6aa2dd6.PNG)
 
-![descripccion](https://user-images.githubusercontent.com/25113662/161483775-a455ae2a-e130-4c2e-889f-91af1c6ae1d2.PNG)
-
-donde Sn es el conjunto de permutaciones de {1, 2, ..., n}, se debe encontrar una permutación π∈Sn de tal manera que minimice la doble sumatoria. Normalmente se habla de minimización y no de maximización ya que, maximizar _f_ puede obtenerse de minimizar -_f_. Sí las matrices A y B son simétricas, computacionalmente se pueden representar en una sola matriz _C_ como se muestra a continuación:
-
-![repComp](https://user-images.githubusercontent.com/25113662/163293020-753b193f-0870-42de-87eb-154df1a56dd7.PNG)
-
+Como cualquier problema de combinatoria, el QAP puede resolverse mediante métodos exactos o aproximados. El método exacto más eficiente que ha logrado resolver el QAP ha sido el Branch & Bound para el tamaño de la instancia de orden 30. Otros métodos exactos que se suelen implementar para resolver problemas de este tipo son el método de planos de corte, la programación dinámica e incluso se han propuesto métodos de relajación de la función objetivo para linealizarla que consisten en transformar el problema haciendo cambios de variables de tal manera que se elimine el término cuadrático de la función objetivo. Lamentablemente estos métodos exactos son incapaces de resolver este problema debido a la necesidad de ofrecer respuestas en tiempos razonables y por ese motivo se han implementado metaheurísticas que evitan la enumeración total y mediante estrategias bien definidas efectúan búsquedas parciales en el espacio de soluciones.
+De momento algunas de las metaheurísticas más eficientes que se han usado para resolver el QAP son la búsqueda Tabú, los Algoritmos Genéticos, la Búsqueda Dispersa o Scatter Search, GRASP, el Recocido Simulado, Colonia de Hormigas y su combinación entre ellos para formar los Algoritmos Híbridos.
 
 ### Aplicaciones
 El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin embargo, sus aplicaciones han empezado a cubrir  otros campos muy variados. Algunas aplicaciones son:
@@ -22,6 +18,9 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
   * Campus universitario
   * Hospitales
 * Problemas de flujo en línea generalizado
+
+![QAP_8](https://user-images.githubusercontent.com/25113662/226206188-a7c8fb3d-4d52-4f89-938d-350fe2032625.png)
+
 ## Ejemplo
 [Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
 ### Especificación
@@ -49,7 +48,7 @@ Parte de la eficacia del algoritmo de debe a que la solución inicial sea factib
 def GenerarVecino(p):
     #Se reordena la permutación p aleatoriamente
     l=random.shuffle(p)
-    return l
+    return l 
 ```
 ### Función de costo
 ```
