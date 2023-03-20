@@ -8,10 +8,10 @@ Planteado por Koopmans y Beckmann en 1957, el problema de asignación cuadrátic
 
 Como cualquier problema de combinatoria, el QAP puede resolverse mediante métodos exactos o aproximados. El método exacto más eficiente que ha logrado resolver el QAP ha sido el Branch & Bound para el tamaño de la instancia de orden 30. Otros métodos exactos que se suelen implementar para resolver problemas de este tipo son el método de planos de corte, la programación dinámica e incluso se han propuesto métodos de relajación de la función objetivo para linealizarla que consisten en transformar el problema haciendo cambios de variables de tal manera que se elimine el término cuadrático de la función objetivo. Lamentablemente estos métodos exactos son incapaces de resolver este problema debido a la necesidad de ofrecer respuestas en tiempos razonables y por ese motivo se han implementado metaheurísticas que evitan la enumeración total y mediante estrategias bien definidas efectúan búsquedas parciales en el espacio de soluciones.
 De momento algunas de las metaheurísticas más eficientes que se han usado para resolver el QAP son: 
-* Búsqueda Tabú
-* Algoritmos Genéticos
-* Recocido Simulado
-* Colonia de Hormigas 
+* _Búsqueda Tabú_
+* _Algoritmos Genéticos_
+* _Recocido Simulado_
+* _Colonia de Hormigas_
 * Búsqueda Dispersa o Scatter Search
 * GRASP
 
