@@ -29,9 +29,9 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 
 ![QAP_8](https://user-images.githubusercontent.com/25113662/226206188-a7c8fb3d-4d52-4f89-938d-350fe2032625.png)
 
-## Ejemplo
+## Ejemplo ***
 [Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
-### Especificación
+### Especificación ***
 Matemáticamente se formula de la siguiente manera:
 Sean $A=a_{i j}$ , $B=b_{k l}$ ∈ $R_{n×n}$ , donde 
 * $n$ indica el número de viviendas que deben construirse. 
@@ -42,7 +42,7 @@ El producto $a_{ik}$ $b_{π(i)π(k)}$ describe la distancia que se debe caminar 
 ![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
 
 ### Representación de la solución
-La solución es la permutación _p_ en _S_n_ que permita la minimización de la doble sumatoria.
+La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria.
 ![visualización](https://user-images.githubusercontent.com/25113662/163540014-8d057c0d-47d4-43ac-a31a-1eb74c355dd7.PNG)
 
 
@@ -50,7 +50,7 @@ La solución es la permutación _p_ en _S_n_ que permita la minimización de la 
 Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
 * Para la primera celda de una matriz se genera un número aleatorio.
 * A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
-* Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda n-1.
+* Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda $n-1$.
 * La última celda lleva el número que falle en el arreglo.
 ```
 def GenerarVecino(p):
