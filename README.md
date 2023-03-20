@@ -75,9 +75,18 @@ def costo(A,p,n):
     return z
 ``` 
 ### Instancias a ejecutar
-1. -
-2. -
-3. -
+1. 10
+2. 100
+3. 1000
 
 ### Leer CSV
-![ReadCSV](https://user-images.githubusercontent.com/25113662/165063962-5cf41743-cfdd-4d26-857c-9b246a229eca.PNG)
+```
+import csv
+import numpy
+
+#Read CSV to Matrix
+CSVData= open("M_10.csv")
+tabla = np.loadtxt(CSVData, delimiter=",")
+print(tabla)
+``` 
+
