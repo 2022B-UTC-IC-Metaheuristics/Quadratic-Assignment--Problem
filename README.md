@@ -2,12 +2,20 @@
 
 
 ## Definición del problema
-Planteado por Koopmans y Beckmann en 1957, el problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-completos, el cual **trata de asignar _n_ instalaciones a una misma cantidad _n_ de localizaciones con un coste asociado a cada una de ellas. Este coste depende de las distancias y flujos entre las instalaciones**, además de que puede existir un coste adicional por instalar cierta facilidad en cierta localización específica. El objetivo es buscar aquella combinación que minimice el coste total.
+Planteado por Koopmans y Beckmann en 1957, el problema de asignación cuadrática (QAP) es un problema clásico de optimización combinatoria de alta complejidad que pertenece a la clase de los problemas NP-completos, el cual **trata de asignar $n$ instalaciones a una misma cantidad $n$ de localizaciones con un coste asociado a cada una de ellas. Este coste depende de las distancias y flujos entre las instalaciones**, además de que puede existir un coste adicional por instalar cierta facilidad en cierta localización específica. El objetivo es buscar aquella combinación que minimice el coste total.
 
 ![QAP_1](https://user-images.githubusercontent.com/25113662/226206123-901ea03f-bc6b-4e68-b4aa-81cfd6aa2dd6.PNG)
 
 Como cualquier problema de combinatoria, el QAP puede resolverse mediante métodos exactos o aproximados. El método exacto más eficiente que ha logrado resolver el QAP ha sido el Branch & Bound para el tamaño de la instancia de orden 30. Otros métodos exactos que se suelen implementar para resolver problemas de este tipo son el método de planos de corte, la programación dinámica e incluso se han propuesto métodos de relajación de la función objetivo para linealizarla que consisten en transformar el problema haciendo cambios de variables de tal manera que se elimine el término cuadrático de la función objetivo. Lamentablemente estos métodos exactos son incapaces de resolver este problema debido a la necesidad de ofrecer respuestas en tiempos razonables y por ese motivo se han implementado metaheurísticas que evitan la enumeración total y mediante estrategias bien definidas efectúan búsquedas parciales en el espacio de soluciones.
-De momento algunas de las metaheurísticas más eficientes que se han usado para resolver el QAP son la búsqueda Tabú, los Algoritmos Genéticos, la Búsqueda Dispersa o Scatter Search, GRASP, el Recocido Simulado, Colonia de Hormigas y su combinación entre ellos para formar los Algoritmos Híbridos.
+De momento algunas de las metaheurísticas más eficientes que se han usado para resolver el QAP son: 
+* Búsqueda Tabú
+* Algoritmos Genéticos
+* Recocido Simulado
+* Colonia de Hormigas 
+* Búsqueda Dispersa o Scatter Search
+* GRASP
+
+y su combinación entre ellos para formar los Algoritmos Híbridos.
 
 ### Aplicaciones
 El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin embargo, sus aplicaciones han empezado a cubrir  otros campos muy variados. Algunas aplicaciones son:
@@ -25,11 +33,11 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 [Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
 ### Especificación
 Matemáticamente se formula de la siguiente manera:
-Sean A = (a_ij ), B = (b_kl) ∈ IRn×n , donde 
-* _n_ indica el número de viviendas que deben construirse. 
-* _a_ij_ la distancia entre el sitio i y el sitio j sobre el campus donde deben construirse las viviendas. 
-* _b_kl_ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas _k_ y _l_. 
-El producto _a_ik b_π(i)π(k)_ describe la distancia que se debe caminar entre las viviendas _j = π(i)_ y _l = π(k)_, si la vivienda _j_ está construida sobre el sitio _i_ y la vivienda _l_ sobre el sitio _k_.
+Sean $A=a_{i j}$ , $B=b_{k l}$ ∈ $R_{n×n}$ , donde 
+* $n$ indica el número de viviendas que deben construirse. 
+* $a_{ij}$ la distancia entre el sitio $i$ y el sitio $j$ sobre el campus donde deben construirse las viviendas. 
+* $b_{kl}$ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas $k$ y $l$. 
+El producto $a_{ik}$ $b_{π(i)π(k)}$ describe la distancia que se debe caminar entre las viviendas $j = π(i)$ y $l = π(k)$, si la vivienda $j$ está construida sobre el sitio $i$ y la vivienda $l$ sobre el sitio $k$.
 ### Modelo
 ![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
 
