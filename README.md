@@ -83,9 +83,11 @@ def costo(A,p,n):
     return z
 ``` 
 ### Instancias a ejecutar
-1. chr12b.dat _[n=12, cost= 9742, sol=(5,7,1,10,11,3,4,2,9,6,12,8)]_
-2. 100
-3. 1000
+    
+    Archivo      [ n,  costo,  (solución)]
+1. Chr12b.dat   _[12, 9742,(5,7,1,10,11,3,4,2,9,6,12,8)]_
+2. tai100a.dat  _[100, 21052466,(...)]_
+3. tai256c.dat  _[256, 44759294, (...)]_
 
 ### Leer CSV
 ```
