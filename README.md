@@ -83,7 +83,7 @@ def costo(A,p,n):
     return z
 ``` 
 ### Instancias a ejecutar
-1. 10
+1. chr12b.dat _[n=12, cost= 9742, sol=(5,7,1,10,11,3,4,2,9,6,12,8)]_
 2. 100
 3. 1000
 
