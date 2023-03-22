@@ -96,7 +96,7 @@ import csv
 import numpy
 
 #Read CSV to Matrix
-CSVData= open("M_10.csv")
+CSVData= open("chr12a.csv")
 tabla = np.loadtxt(CSVData, delimiter=",")
 print(tabla)
 ``` 
