@@ -95,9 +95,16 @@ def costo(A,p,n):
 import csv
 import numpy
 
-#Read CSV to Matrix
+#Read CSV to Matrix A
 CSVData= open("chr12a.csv")
-tabla = np.loadtxt(CSVData, delimiter=",")
-print(tabla)
+tabla_A = np.loadtxt(CSVData, delimiter=",")
+
+#Read CSV to Matrix A
+CSVData= open("chr12b.csv")
+tabla_B = np.loadtxt(CSVData, delimiter=",")
+
+n=len(tabla_A) #matrix length
+#visualization
+print(n,"\nA:",tabla_A,"\nB:",tabla_B)
 ``` 
 
