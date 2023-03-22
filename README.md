@@ -83,7 +83,7 @@ def costo(A,p,n):
     return z
 ``` 
 ### Instancias a ejecutar
-      Archivo            _[ n , costo , ( solución )]_
+   Archivo           _[ n , costo , ( solución )]_
 1. Chr12b.dat         _[12, 9742,(5,7,1,10,11,3,4,2,9,6,12,8)]_
 2. tai100a.dat        _[100, 21052466,(...)]_
 3. tai256c.dat        _[256, 44759294, (...)]_
