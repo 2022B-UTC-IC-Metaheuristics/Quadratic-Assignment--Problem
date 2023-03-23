@@ -55,7 +55,6 @@ def solini(n):
     p = [i for i in range(0,n)]
     print("p:",p)
     random.shuffle(p)
-    print("p:",p)
     return p.copy()
 ```
 ### Solución Vecina
