@@ -29,7 +29,7 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 
 ![QAP_8](https://user-images.githubusercontent.com/25113662/226206188-a7c8fb3d-4d52-4f89-938d-350fe2032625.png)
 
-## Ejemplo ***
+## Ejemplo
 ![QAP_11](https://user-images.githubusercontent.com/25113662/227270137-2084422d-a0c1-4f51-b893-e3a59de7240d.png)
 
 Se pretende mostrar como tenemos el problema de asignar 4 entidades como por ejemplo unas oficinas, en 4 localidades diferentes. El gráfico muestra una posible solución asignando la oficina 1 en la ciudad 2, la oficina 2 en la localidad 1, la oficina 3 en la ciudad 4 y por última la oficina 4 en la localidad 3.
