@@ -50,7 +50,14 @@ Parte de la eficacia del algoritmo de debe a que la solución inicial sea factib
 * A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
 * Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda $n-1$.
 * La última celda lleva el número que falle en el arreglo.
-
+```
+def solini(n):
+    p = [i for i in range(0,n)]
+    print("p:",p)
+    random.shuffle(p)
+    print("p:",p)
+    return p.copy()
+```
 ### Solución Vecina
 ```
 def vecino(p):
