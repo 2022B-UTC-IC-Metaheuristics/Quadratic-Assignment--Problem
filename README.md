@@ -53,7 +53,6 @@ Parte de la eficacia del algoritmo de debe a que la solución inicial sea factib
 ```
 def solini(n):
     p = [i for i in range(0,n)]
-    print("p:",p)
     random.shuffle(p)
     return p.copy()
 ```
