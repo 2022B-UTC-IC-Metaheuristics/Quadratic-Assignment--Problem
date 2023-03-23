@@ -30,33 +30,38 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 ![QAP_8](https://user-images.githubusercontent.com/25113662/226206188-a7c8fb3d-4d52-4f89-938d-350fe2032625.png)
 
 ## Ejemplo ***
-[Dickey y Hopkins] En un campus universitario se deben construir viviendas en determinadas parcelas de terreno, el problema a resolver consiste en encontrar una asignación de los sitios a las viviendas de manera de minimizar la distancia total que deben recorrer los alumnos y el personal. 
-### Especificación ***
-Matemáticamente se formula de la siguiente manera:
-Sean $A=a_{i j}$ , $B=b_{k l}$ ∈ $R_{n×n}$ , donde 
-* $n$ indica el número de viviendas que deben construirse. 
-* $a_{ij}$ la distancia entre el sitio $i$ y el sitio $j$ sobre el campus donde deben construirse las viviendas. 
-* $b_{kl}$ describe la frecuencia con la que los estudiantes y el personal camina entre las viviendas $k$ y $l$. 
-El producto $a_{ik}$ $b_{π(i)π(k)}$ describe la distancia que se debe caminar entre las viviendas $j = π(i)$ y $l = π(k)$, si la vivienda $j$ está construida sobre el sitio $i$ y la vivienda $l$ sobre el sitio $k$.
-### Modelo
-![funcionObjetivo2](https://user-images.githubusercontent.com/25113662/161483152-351a8022-d141-464c-950a-7e252d95d6a0.PNG)
+![QAP_11](https://user-images.githubusercontent.com/25113662/227270137-2084422d-a0c1-4f51-b893-e3a59de7240d.png)
 
+Se pretende mostrar como tenemos el problema de asignar 4 entidades como por ejemplo unas oficinas, en 4 localidades diferentes. El gráfico muestra una posible solución asignando la oficina 1 en la ciudad 2, la oficina 2 en la localidad 1, la oficina 3 en la ciudad 4 y por última la oficina 4 en la localidad 3.
+La manera más común de plantear el problema de forma combinatoria matemáticamente es de la siguiente manera:
+```math
+{\Huge \sum_{i=1}^{n} {\sum_{j=1}^{n} { f_{ij} d_{p(i) p(j)} }} }
+```
+Donde $f$ y $d$ son las matrices de flujos y distancias de tamaño $nxn$ cuyos índices $i$, $j$ en la matriz de flujos representan el flujo entre las entidades de $i$ a $j$ y a su vez los mismos índices $i$, $j$ para la matriz de distancias representan las distancias entre las localidades $i$ y $j$. El vector $p$ es una permutación de números {1,2,…,n} siendo $p(j)$ la localización donde la entidad $j$ es asignada.
+
+### Modelo
+```math
+{\Huge \sum_{i=1}^{n} {\sum_{j=1}^{n} { f_{ij} d_{p(i) p(j)} }} }
+```
 ### Representación de la solución
 La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria.
 ![visualización](https://user-images.githubusercontent.com/25113662/163540014-8d057c0d-47d4-43ac-a31a-1eb74c355dd7.PNG)
 
 
-### Generación de una solución vecina
+### Solución Inicial
 Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
 * Para la primera celda de una matriz se genera un número aleatorio.
 * A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
 * Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda $n-1$.
 * La última celda lleva el número que falle en el arreglo.
+
+### Solución Vecina
 ```
-def GenerarVecino(p):
-    #Se reordena la permutación p aleatoriamente
-    l=random.shuffle(p)
-    return l 
+def vecino(p):
+    idx = range(len(p))
+    i1, i2 = random.sample(idx, 2)
+    p[i1], p[i2] = p[i2], p[i1]
+    return p
 ```
 ### Función de costo
 ```
