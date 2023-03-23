@@ -39,13 +39,9 @@ La manera más común de plantear el problema de forma combinatoria matemáticam
 ```
 Donde $f$ y $d$ son las matrices de flujos y distancias de tamaño $nxn$ cuyos índices $i$, $j$ en la matriz de flujos representan el flujo entre las entidades de $i$ a $j$ y a su vez los mismos índices $i$, $j$ para la matriz de distancias representan las distancias entre las localidades $i$ y $j$. El vector $p$ es una permutación de números {1,2,…,n} siendo $p(j)$ la localización donde la entidad $j$ es asignada.
 
-### Modelo
-```math
-{\Huge \sum_{i=1}^{n} {\sum_{j=1}^{n} { f_{ij} d_{p(i) p(j)} }} }
-```
 ### Representación de la solución
 La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria.
-![visualización](https://user-images.githubusercontent.com/25113662/163540014-8d057c0d-47d4-43ac-a31a-1eb74c355dd7.PNG)
+![QAP_12](https://user-images.githubusercontent.com/25113662/227285012-5d85d778-2253-40f1-acb0-87b9f515fd2a.png)
 
 
 ### Solución Inicial
