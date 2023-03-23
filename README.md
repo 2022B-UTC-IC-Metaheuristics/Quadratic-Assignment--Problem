@@ -107,7 +107,7 @@ import numpy
 CSVData= open("chr12a.csv")
 tabla_A = np.loadtxt(CSVData, delimiter=",")
 
-#Read CSV to Matrix A
+#Read CSV to Matrix B
 CSVData= open("chr12b.csv")
 tabla_B = np.loadtxt(CSVData, delimiter=",")
 
