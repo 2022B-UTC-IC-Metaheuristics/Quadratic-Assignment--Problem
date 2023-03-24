@@ -30,9 +30,12 @@ El QAP inicialmente fue planteada como una técnica enfocada a la economía, sin
 ![QAP_8](https://user-images.githubusercontent.com/25113662/226206188-a7c8fb3d-4d52-4f89-938d-350fe2032625.png)
 
 ## Ejemplo
-![QAP_11](https://user-images.githubusercontent.com/25113662/227270137-2084422d-a0c1-4f51-b893-e3a59de7240d.png)
+![QAP_14](https://user-images.githubusercontent.com/25113662/227623633-d7ab4f10-eaff-4ef4-8cf7-e14ed1dd0248.PNG)
 
-Se pretende mostrar como tenemos el problema de asignar 4 entidades como por ejemplo unas oficinas, en 4 localidades diferentes. El gráfico muestra una posible solución asignando la oficina 1 en la ciudad 2, la oficina 2 en la localidad 1, la oficina 3 en la ciudad 4 y por última la oficina 4 en la localidad 3.
+![QAP_11](https://user-images.githubusercontent.com/25113662/227624060-0b7317bd-8fb1-4362-8bb7-bd0d1833a5dd.png)
+
+
+Se pretende mostrar como tenemos el problema de asignar 4 entidades como por ejemplo unas fábricas, en 4 localidades diferentes. El gráfico muestra una posible solución asignando la fábricas 1 en la ciudad 2, la fábricas 2 en la localidad 1, la fábricas 3 en la ciudad 4 y por última la fábricas 4 en la localidad 3.
 La manera más común de plantear el problema de forma combinatoria matemáticamente es de la siguiente manera:
 ```math
 {\Huge \sum_{i=1}^{n} {\sum_{j=1}^{n} { f_{ij} d_{p(i) p(j)} }} }
