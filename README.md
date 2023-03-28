@@ -54,6 +54,21 @@ Parte de la eficacia del algoritmo de debe a que la solución inicial sea factib
 * Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda $n-1$.
 * La última celda lleva el número que falle en el arreglo.
 ```
+def best_solini(F,D,n):
+  sol=[]
+  
+  for i in range(n):
+    min=10**10
+    jmin=0
+    for j in range(n):
+      prod = F[i][j]*D[i][j]
+      if prod<min and (not j in sol) and i!=j:
+        min = prod
+        jmin = j
+    sol.append(jmin)
+  return sol.copy()
+```
+```
 def solini(n):
     p = [i for i in range(0,n)]
     random.shuffle(p)
