@@ -43,7 +43,7 @@ La manera más común de plantear el problema de forma combinatoria matemáticam
 Donde $f$ y $d$ son las matrices de flujos y distancias de tamaño $nxn$ cuyos índices $i$, $j$ en la matriz de flujos representan el flujo entre las entidades de $i$ a $j$ y a su vez los mismos índices $i$, $j$ para la matriz de distancias representan las distancias entre las localidades $i$ y $j$. El vector $p$ es una permutación de números {1,2,…,n} siendo $p(j)$ la localización donde la entidad $j$ es asignada.
 
 ### Representación de la solución
-La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria.
+La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria. **La solución se representa como un arreglo de números en el rango de 1 a n, dichos valores no se repiten**.
 ![QAP_12](https://user-images.githubusercontent.com/25113662/227285012-5d85d778-2253-40f1-acb0-87b9f515fd2a.png)
 
 
