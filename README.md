@@ -80,10 +80,12 @@ def solini(n):
 ### Solución Vecina
 ```
 def vecino(p):
-    idx = range(len(p))
+  idx = range(len(p))
+  rep=int(math.sqrt(len(p))/2)
+  for i in range(rep):
     i1, i2 = random.sample(idx, 2)
     p[i1], p[i2] = p[i2], p[i1]
-    return p
+  return p
 ```
 ![QAP_13](https://user-images.githubusercontent.com/25113662/227287513-9c4b0950-b707-4e5a-bcd2-5514bb128ae4.PNG)
 
