@@ -74,13 +74,11 @@ def f(x: list[int], flows: np.ndarray, distances: np.ndarray) -> float:
         Costo de la solución x.
     """
 
-	# Obtenemos el número de entidades
+    # Obtenemos el número de entidades
     n = len(x)
 
     # Acumulador para el calculo del costo
     cost = 0
-
-	#NOTE: Se resta 1 a los valores del vector pues su rango es de 1 a n, pero dado que en la fórmula se utilizand como índices, se les resta -1 para que coincidan con la forma en que se accede a los elementos de las matrices (que empiezan en 0).
 
     for i in range(n):
         for j in range(n):
@@ -88,6 +86,7 @@ def f(x: list[int], flows: np.ndarray, distances: np.ndarray) -> float:
 
     return cost
 ```
+`NOTA:` Se resta 1 a los valores del vector pues su rango es de 1 a n, pero dado que en la fórmula se utilizan como índices, se les resta -1 para que coincidan con la forma en que se accede a los elementos de las matrices (que empiezan en 0).
 
 ### Instancias a resolver
 La siguiente tabla muestra las instancias que se van a resolver. Cada instancia tiene un tamaño de `n` entidades y se cuenta con las matrices de flujos y distancias de tamaño `nxn`.
