@@ -47,73 +47,50 @@ La solución es la permutación $p$ en $S_n$ que permita la minimización de la 
 ![QAP_12](https://user-images.githubusercontent.com/25113662/227285012-5d85d778-2253-40f1-acb0-87b9f515fd2a.png)
 
 
-### Solución Inicial
-Parte de la eficacia del algoritmo de debe a que la solución inicial sea factible y buena, para ello se realiza lo siguiente:
-* Para la primera celda de una matriz se genera un número aleatorio.
-* A partir de ese número se calcula el sitio cuyo producto (flujo * distancia) sea el mínimo y se coloca en la siguiente celda.
-* Con base en los números que ya están colocados, se busca el sitio que tenga el mínimo producto y se coloca en la siguiente celda, si es una instalación que ya fue ubicada, se busca el siguiente de menor producto (flujo * distancia). Se sigue este proceso hasta la celda $n-1$.
-* La última celda lleva el número que falle en el arreglo.
+### Solución inicial
+Como el problema es de permutación, la solución inicial se genera de manera aleatoria. Cuando nuestra `n = 4`, una posible solución inicial podría ser: `[2, 1, 4, 3]`
 
-Solución inicial factible:
-```
-def best_solini(F,D,n):
-  sol=[]
-  
-  for i in range(n):
-    min=10**10
-    jmin=0
-    for j in range(n):
-      prod = F[i][j]*D[i][j]
-      if prod<min and (not j in sol) and i!=j:
-        min = prod
-        jmin = j
-    sol.append(jmin)
-  return sol.copy()
-```
-Solución inicial aleatoria:
-```
-def solini(n):
-    p = [i for i in range(0,n)]
-    random.shuffle(p)
-    return p.copy()
-```
-### Solución Vecina
-```
-def vecino(p):
-  idx = range(len(p))
-  rep=int(math.sqrt(len(p))/2)
-  for i in range(rep):
-    i1, i2 = random.sample(idx, 2)
-    p[i1], p[i2] = p[i2], p[i1]
-  return p
-```
-![QAP_13](https://user-images.githubusercontent.com/25113662/227287513-9c4b0950-b707-4e5a-bcd2-5514bb128ae4.PNG)
+### Generación de soluciones vecinas
+Para generar soluciones vecinas se selecciona de forma aleatoria dos elementos del vector para después intercambiarlos. Por ejemplo, si nuestra solución actual es `[2, 1, 4, 3]` y generamos de forma aleatoria los índices `0` y `3`, después de intercambiar sus valores la solución vecina sería `[3, 1, 4, 2]`.
 
-### Función de costo
-```
-#Costo para 2 matrices
-def costo(A,B,p,n):
-    z=0
-    #doble sumatoria
+### Función objetivo
+La función objetivo es la que se encarga de evaluar la solución actual. En este caso, la función objetivo es la doble sumatoria que se mencionó anteriormente. Esta sería:
+```python
+def f(x: list[int], flows: np.ndarray, distances: np.ndarray) -> float:
+    """Función objetivo para el Problema de Asignación Cuadrática.
+
+    Parameters
+    ----------
+    x : list[int]
+        La solución a evaluar, es decir, la permutación de las entidades. Es de tamaño n.
+    flows : np.ndarray
+		Matriz de flujos. Es de tamaño nxn.
+    distances : np.ndarray
+		Matriz de distancias. Es de tamaño nxn.
+
+    Returns
+    -------
+    float
+        Costo de la solución x.
+    """
+
+	# Obtenemos el número de entidades
+    n = len(x)
+
+    # Acumulador para el calculo del costo
+    cost = 0
+
+	#NOTE: Se resta 1 a los valores del vector pues su rango es de 1 a n, pero dado que en la fórmula se utilizand como índices, se les resta -1 para que coincidan con la forma en que se accede a los elementos de las matrices (que empiezan en 0).
+
     for i in range(n):
-        for j in range(n):        
-            z += A[i][j]*B[p[i]][p[j]]
-    return z
-``` 
+        for j in range(n):
+            cost += flows[i, j] * distances[x[i] - 1, x[j] - 1]
+
+    return cost
 ```
-#Costo para matrices simetricas (matriz unica)
-def costo(A,p,n):
-    z=0
-    #doble sumatoria
-    for i in range(n):
-        for j in range(n):        
-            if(i>j):
-                z += A[j][i]*A[p[i]][p[j]]
-            elif(i<j):
-                z += A[i][j]*A[p[j]][p[i]]
-    return z
-``` 
-### Instancias a ejecutar
+
+### Instancias a resolver
+La siguiente tabla muestra las instancias que se van a resolver. Cada instancia tiene un tamaño de `n` entidades y se cuenta con las matrices de flujos y distancias de tamaño `nxn`.
 
 | Instancia    | _n_ | Costo | Solución |
 | :---:        |:---:|  :---: |  :---: |
@@ -121,21 +98,32 @@ def costo(A,p,n):
 | tai100.csv  |100| 21052466 | (...) |
 | tai256.csv  |256| 44759294 | (...) |
 
-### Leer CSV
+### Como leer los CSVs de las instancias
+En el archivo `Instancias2024.zip` se encuentran los archivos CSV con las matrices de flujos y distancias divididos en carpetas. Es importante notar que cada carpeta tiene 2 archivos, los que terminan en `*A.csv` contienen la matriz de flujos y los que terminan en `*B.csv`, la matriz de distancias del problema.
+
+Para leerlos, por ejemplo, para `Chr12`, se puede hacer de la siguiente manera:
+
+```python
+import numpy as np
+
+flows = np.loadtxt("Chr12/Chr12A.csv", delimiter=",")
+distances = np.loadtxt("Chr12/Chr12B.csv", delimiter=",")
+
+# Obtenemos el número de entidades
+n = flows.shape[0]
 ```
-import csv
-import numpy
 
-#Read CSV to Matrix A
-CSVData= open("chr12a.csv")
-tabla_A = np.loadtxt(CSVData, delimiter=",")
+### Tip
+Como la función objetivo recibe 3 parámetros, se puede hacer uso de la función `functools.partial` para crear una función que reciba solo un parámetro y que los otros dos sean fijos. Por ejemplo:
 
-#Read CSV to Matrix B
-CSVData= open("chr12b.csv")
-tabla_B = np.loadtxt(CSVData, delimiter=",")
+```python
+import functools
 
-n=len(tabla_A) #matrix length
-#visualization
-print(n,"\nA:",tabla_A,"\nB:",tabla_B)
-``` 
+# Se fijan los valores de flows y distances
+fn = functools.partial(f, flows=flows, distances=distances)
 
+# Se manda la función generada a la metaheurística
+sa.run(fn, objective_type="min")
+```
+
+De esta forma aseguramos que a la metaheurística solo le importe mandar el vector solución a la función objetivo sin preocuparse por las matrices de flujo y distancia pues ya están implícitas en la llamada. 
