@@ -113,7 +113,7 @@ n = flows.shape[0]
 ```
 
 ### Tip
-Como la función objetivo recibe 3 parámetros, se puede hacer uso de la función `functools.partial` para crear una función que reciba solo un parámetro y que los otros dos sean fijos. Por ejemplo:
+Como la función objetivo recibe 3 parámetros pero la metaheurística solo pueden mandar 1, que es el vector solución (el parámetro `x` en la función), se puede hacer uso de la función `functools.partial` para crear una función que reciba solo un parámetro y que los otros dos sean fijos. Por ejemplo:
 
 ```python
 import functools
