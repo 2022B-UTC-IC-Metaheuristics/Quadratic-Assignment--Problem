@@ -46,7 +46,7 @@ Donde $f$ y $d$ son las matrices de flujos y distancias de tamaño $nxn$ cuyos �
 La solución es la permutación $p$ en $S_n$ que permita la minimización de la doble sumatoria. **La solución se representa como un arreglo de números en el rango de 1 a n, dichos valores no se repiten**.
 ![QAP_12](https://user-images.githubusercontent.com/25113662/227285012-5d85d778-2253-40f1-acb0-87b9f515fd2a.png)
 
-
+## Metodología
 ### Solución inicial
 Como el problema es de permutación, la solución inicial se genera de manera aleatoria. Cuando nuestra `n = 4`, una posible solución inicial podría ser: `[2, 1, 4, 3]`
 
