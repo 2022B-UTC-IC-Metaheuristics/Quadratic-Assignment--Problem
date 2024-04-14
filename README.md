@@ -93,9 +93,9 @@ La siguiente tabla muestra las instancias que se van a resolver. Cada instancia 
 
 | Instancia    | _n_ | Costo | Solución |
 | :---:        |:---:|  :---: |  :---: |
-| chr12.csv   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
-| tai100.csv  |100| 21052466 | (...) |
-| tai256.csv  |256| 44759294 | (...) |
+| chr12   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
+| tai100  |100| 21052466 | (...) |
+| tai256  |256| 44759294 | (...) |
 
 ### Como leer los CSVs de las instancias
 En el archivo `Instancias2024.zip` se encuentran los archivos CSV con las matrices de flujos y distancias divididos en carpetas. Es importante notar que cada carpeta tiene 2 archivos, los que terminan en `*A.csv` contienen la matriz de flujos y los que terminan en `*B.csv`, la matriz de distancias del problema.
