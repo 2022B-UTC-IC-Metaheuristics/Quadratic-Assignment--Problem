@@ -89,13 +89,14 @@ def f(x: list[int], flows: np.ndarray, distances: np.ndarray) -> float:
 `NOTA:` Se resta 1 a los valores del vector pues su rango es de 1 a n, pero dado que en la fórmula se utilizan como índices, se les resta -1 para que coincidan con la forma en que se accede a los elementos de las matrices (que empiezan en 0).
 
 ### Instancias a resolver
-La siguiente tabla muestra las instancias que se van a resolver. Cada instancia tiene un tamaño de `n` entidades y se cuenta con las matrices de flujos y distancias de tamaño `nxn`.
+La siguiente tabla muestra las instancias que se van a resolver. Cada instancia tiene un tamaño de `n` entidades y se cuenta con las matrices de flujos y distancias de tamaño `nxn`. El costo de las instancias 2, 3, y 4 corresponden con el mejor costo obtenido.
 
-| Instancia    | _n_ | Costo | Solución |
-| :---:        |:---:|  :---: |  :---: |
-| chr12   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
-| tai100  |100| 21052466 | (...) |
-| tai256  |256| 44759294 | (...) |
+#| Instancia    | _n_ | Costo | Solución |
+:---:| :---:        |:---:|  :---: |  :---: |
+1| chr12b   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
+2| tai50a  |50| 5145222 | (...) |
+3| tai100a  |100| 22021554 | (...) |
+4| tai256c  |256| 45480076 | (...) |
 
 ### Como leer los CSVs de las instancias
 En el archivo `Instancias2024.zip` se encuentran los archivos CSV con las matrices de flujos y distancias divididos en carpetas. Es importante notar que cada carpeta tiene 2 archivos, los que terminan en `*A.csv` contienen la matriz de flujos y los que terminan en `*B.csv`, la matriz de distancias del problema.
