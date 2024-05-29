@@ -93,21 +93,21 @@ La siguiente tabla muestra las instancias que se van a resolver. Cada instancia 
 
 #| Instancia    | _n_ | Costo | Solución |
 :---:| :---:        |:---:|  :---: |  :---: |
-1| chr12b   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
-2| tai50a  |50| 5145222 | (...) |
-3| tai100a  |100| 22021554 | (...) |
-4| tai256c  |256| 45480076 | (...) |
+1| Chr12b   | 12| 9742     | (5,7,1,10,11,3,4,2,9,6,12,8) |
+2| Tai50a  |50| 5145222 | (...) |
+3| Tai100a  |100| 22021554 | (...) |
+4| Tai256c  |256| 45480076 | (...) |
 
 ### Como leer los CSVs de las instancias
-En el archivo `Instancias2024.zip` se encuentran los archivos CSV con las matrices de flujos y distancias divididos en carpetas. Es importante notar que cada carpeta tiene 2 archivos, los que terminan en `*A.csv` contienen la matriz de flujos y los que terminan en `*B.csv`, la matriz de distancias del problema.
+En el archivo `Instancias2024.zip` se encuentran los archivos CSV con las matrices de flujos y distancias para cada una de las instancias. Es importante notar que cada carpeta tiene 2 archivos, `flows.csv` que contiene la matriz de flujos y `distances.csv`, la matriz de distancias del problema.
 
-Para leerlos, por ejemplo, para `Chr12`, se puede hacer de la siguiente manera:
+Para leerlos, por ejemplo, para `Chr12b`, se puede hacer de la siguiente manera:
 
 ```python
 import numpy as np
 
-flows = np.loadtxt("Chr12/Chr12A.csv", delimiter=",")
-distances = np.loadtxt("Chr12/Chr12B.csv", delimiter=",")
+flows = np.loadtxt("Chr12b/flows.csv", delimiter=",")
+distances = np.loadtxt("Chr12b/distances.csv", delimiter=",")
 
 # Obtenemos el número de entidades
 n = flows.shape[0]
